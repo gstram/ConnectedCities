@@ -1,0 +1,24 @@
+Boston, New York
+Philadelphia, Newark
+Newark, Boston
+Trenton, Albany
+Albany, Miami
+Miami, Rome
+Rome, Paris
+Paris, Amsterdam
+Amsterdam, Berlin
+Berlin, London
+London, Barcelona
+Barcelona, Madrid
+Madrid, Tokyo
+Tokyo, Beijing
+Beijing, Sydney
+Sydney, Delhi
+Sydney, Lagos
+Lagos, Delhi
+Delhi, Amsterdam
+Barcelona, Philadelphia
+Tokyo, Rome
+Tokyo, New York
+Tokyo, Los Angeles
+
