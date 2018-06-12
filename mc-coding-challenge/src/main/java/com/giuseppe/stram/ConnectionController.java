@@ -17,6 +17,7 @@ public class ConnectionController {
     	{
     		return "No";
     	}
+    	
     	boolean isConnected = DoesConnectionExist.findRoute(origin, destination, DoesConnectionExist.createMap());
     	
     	if(isConnected)
@@ -25,7 +26,6 @@ public class ConnectionController {
     	}
     	else
     		return "No";
-    	
     }
 
 }

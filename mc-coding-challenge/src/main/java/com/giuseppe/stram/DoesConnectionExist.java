@@ -25,7 +25,8 @@ public class DoesConnectionExist
 	}
 
 	// method to determine if route between cities exists
-	public static boolean findRoute(String city1, String city2, Map<String, Set<String>> nodeMap) {
+	public static boolean findRoute(String city1, String city2, Map<String, Set<String>> nodeMap) 
+	{
 		// determine if city1 and city2 are the same city
 		boolean isFound = city1.equals(city2);
 
@@ -85,7 +86,8 @@ public class DoesConnectionExist
 				endConnections.add(start);
 			}
 			scanner.close();
-		} catch (Exception e) 
+		} 
+		catch (Exception e) 
 		{
 			e.printStackTrace();
 		}
