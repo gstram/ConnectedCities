@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: mc-coding-challenge
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: stram
+Implementation-Vendor-Id: com.giuseppe.stram
+Build-Jdk: 1.8.0_161
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/mc-coding-challenge
+Created-By: Maven Integration for Eclipse
+

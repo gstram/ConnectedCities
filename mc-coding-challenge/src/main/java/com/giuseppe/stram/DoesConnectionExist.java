@@ -11,7 +11,37 @@ import java.util.Set;
 
 public class DoesConnectionExist 
 {
+	
+	public static Map<String, Set<String>> createMap()
+	{
+		// create a node map 
+		Map<String, Set<String>> nodeMap = new HashMap<String, Set<String>>();
 
+		// Parse file to get all travel routes
+		try (Scanner scanner = new Scanner(new File("city.txt")).useDelimiter(",|\r\n")) 
+		{
+			while (scanner.hasNext()) 
+			{
+				// Get start and ending city of travel route
+				String start = scanner.next().trim();
+				String end = scanner.next().trim();
+
+				// Populate node map with all possible routes
+				Set<String> startConnections = getCityConnections(nodeMap, start);
+				Set<String> endConnections = getCityConnections(nodeMap, end);
+				startConnections.add(end);
+				endConnections.add(start);
+			}
+			scanner.close();
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		
+		return nodeMap;
+	}
+	
 	// Helper method to determine if city has a matching city in map 
 	// or add it to map
 	private static Set<String> getCityConnections(Map<String, Set<String>> map, String city) {
@@ -23,7 +53,8 @@ public class DoesConnectionExist
 		// return set of matching cities
 		return map.get(city);
 	}
-
+	
+	
 	// method to determine if route between cities exists
 	public static boolean findRoute(String city1, String city2, Map<String, Set<String>> nodeMap) 
 	{
@@ -64,34 +95,5 @@ public class DoesConnectionExist
 
 		return isFound;
 	}
-	
-	public static Map<String, Set<String>> createMap()
-	{
-		// create a node map 
-		Map<String, Set<String>> nodeMap = new HashMap<String, Set<String>>();
 
-		// Parse file to get all travel routes
-		try (Scanner scanner = new Scanner(new File("city.txt")).useDelimiter(",|\r\n")) 
-		{
-			while (scanner.hasNext()) 
-			{
-				// Get start and ending city of travel route
-				String start = scanner.next().trim();
-				String end = scanner.next().trim();
-
-				// Populate node map with all possible routes
-				Set<String> startConnections = getCityConnections(nodeMap, start);
-				Set<String> endConnections = getCityConnections(nodeMap, end);
-				startConnections.add(end);
-				endConnections.add(start);
-			}
-			scanner.close();
-		} 
-		catch (Exception e) 
-		{
-			e.printStackTrace();
-		}
-		
-		return nodeMap;
-	}
 }
